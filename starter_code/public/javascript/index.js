@@ -41,4 +41,13 @@ $(document).ready( () => {
     }
     charactersAPI.createOneRegister(createuser);
   })
+
+
+  $("#show-data").on('click', (e) => {
+    event.preventDefault()
+
+    const showid=$("#show-id").val()
+    console.log(showid)
+    charactersAPI.showOneUser(showid);
+})
 })

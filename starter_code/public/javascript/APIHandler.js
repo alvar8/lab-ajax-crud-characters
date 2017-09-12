@@ -75,4 +75,26 @@ return $.post(`${this.BASE_URL}/characters`, {
       },
     });
   }
+showOneUser(id){
+  $.ajax({
+    url: `${this.BASE_URL}/characters/${id}`,
+    method: "GET",
+
+    success: function (response) {
+      const data = JSON.stringify(response.name);
+      const dataoccupation = JSON.stringify(response.occupation);
+      const dataweapon = JSON.stringify(response.weapon);
+      $(".character-info .name").html(data);
+      $(".character-info .occupation").html(dataoccupation);
+      $(".character-info .weapon").html(dataweapon);
+
+    },
+    error: function (err) {
+
+    },
+  });
+
+}
+
+
 }
